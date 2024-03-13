@@ -1,6 +1,5 @@
 *
 
-!.gitignore
 
 !alacritty
 !alacritty/**/*
@@ -9,8 +8,8 @@ alacritty/zellij
 !nvim/**/*
 !zellij
 !zellij/**/*
-./zellij/completion.zsh
+zellij/completion.zsh
 
-
+!.gitignore
 !README.md
 
