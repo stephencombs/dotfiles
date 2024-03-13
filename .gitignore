@@ -1,9 +1,8 @@
 *
 
 
-!alacritty
-!alacritty/**/*
-alacritty/zellij
+!alacritty/alacritty.toml
+!alacritty/dracula.toml
 !nvim
 !nvim/**/*
 !zellij
