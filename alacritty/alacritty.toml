@@ -1,0 +1,21 @@
+import = ["~/.config/alacritty/dracula.toml"]
+
+[font]
+normal.family = "JetBrainsMono Nerd Font Mono"
+bold.family = "JetBrainsMono Nerd Font Mono"
+italic.family = "JetBrainsMono Nerd Font Mono"
+bold_italic.family = "JetBrainsMono Nerd Font Mono"
+
+size = 14.0
+
+# [cursor]
+# vi_mode_style = { shape = "Block", blinking = "Always"}
+
+[window]
+option_as_alt = "Both"
+
+[scrolling]
+multiplier = 1
+
+[env]
+TERM = "xterm-256color"
