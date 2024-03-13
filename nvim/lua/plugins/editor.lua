@@ -7,7 +7,7 @@ return {
       {
         "<leader>n",
         function()
-          require("neo-tree.command").execute({ toggle = false, dir = require("lazyvim.util").get_root() })
+          require("neo-tree.command").execute({ toggle = false, dir = require("lazyvim.util").root.get() })
         end,
         desc = "Explorer NeoTree (root dir)",
       },
@@ -38,6 +38,78 @@ return {
       -- { "<leader>fr", false },
       -- { "<leader>fR", false },
     },
+    opts = function()
+      local actions = require("telescope.actions")
+
+      local open_with_trouble = function(...)
+        return require("trouble.providers.telescope").open_with_trouble(...)
+      end
+      local open_selected_with_trouble = function(...)
+        return require("trouble.providers.telescope").open_selected_with_trouble(...)
+      end
+      local find_files_no_ignore = function()
+        local action_state = require("telescope.actions.state")
+        local line = action_state.get_current_line()
+        Util.telescope("find_files", { no_ignore = true, default_text = line })()
+      end
+      local find_files_with_hidden = function()
+        local action_state = require("telescope.actions.state")
+        local line = action_state.get_current_line()
+        Util.telescope("find_files", { hidden = true, default_text = line })()
+      end
+
+      return {
+        defaults = {
+          vimgrep_arguments = {
+            "rg",
+            "-L",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+          },
+          prompt_prefix = "   ",
+          selection_caret = "  ",
+          entry_prefix = "  ",
+          initial_mode = "insert",
+          selection_strategy = "reset",
+          sorting_strategy = "ascending",
+          layout_strategy = "horizontal",
+          layout_config = {
+            horizontal = {
+              prompt_position = "top",
+              preview_width = 0.55,
+              results_width = 0.8,
+            },
+            vertical = {
+              mirror = false,
+            },
+            width = 0.87,
+            height = 0.80,
+            preview_cutoff = 120,
+          },
+          path_display = { "truncate" },
+          winblend = 0,
+          mappings = {
+            i = {
+              ["<c-t>"] = open_with_trouble,
+              ["<a-t>"] = open_selected_with_trouble,
+              ["<a-i>"] = find_files_no_ignore,
+              ["<a-h>"] = find_files_with_hidden,
+              ["<C-Down>"] = actions.cycle_history_next,
+              ["<C-Up>"] = actions.cycle_history_prev,
+              ["<C-f>"] = actions.preview_scrolling_down,
+              ["<C-b>"] = actions.preview_scrolling_up,
+            },
+            n = {
+              ["q"] = actions.close,
+            },
+          },
+        },
+      }
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -87,5 +159,8 @@ return {
     dependencies = {
       "hrsh7th/cmp-emoji",
     },
+  },
+  {
+    "gleam-lang/gleam.vim",
   },
 }

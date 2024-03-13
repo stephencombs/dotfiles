@@ -4,3 +4,6 @@
 
 -- Disable autoformat
 vim.g.autoformat = false
+
+-- Disable comment continuation formatting
+vim.opt.formatoptions:remove { "c", "r", "o" }
