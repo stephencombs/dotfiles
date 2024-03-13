@@ -1,0 +1,16 @@
+*
+
+!.gitignore
+
+!alacritty
+!alacritty/**/*
+alacritty/zellij
+!nvim
+!nvim/**/*
+!zellij
+!zellij/**/*
+./zellij/completion.zsh
+
+
+!README.md
+
