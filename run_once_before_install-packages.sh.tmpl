@@ -1,0 +1,7 @@
+{{ if eq .osid "darwin" -}}
+#!/bin/sh
+sh "$HOME"/.local/share/chezmoi/dot_config/zsh/mac-install.sh
+{{ else if eq .osid "linux-debian" "linux-ubuntu" -}}
+#!/bin/sh
+sh $HOME/.local/share/chezmoi/dot_config/zsh/debian-install.sh
+{{ end -}}

@@ -7,6 +7,8 @@ autoload -U compinit; compinit
 # Load environment variables
 #===============================================================================
 [ -f ~/.config/zsh/.env ] && source ~/.config/zsh/.env
+# Used for machine specific variables, this is not checked in to git
+[ -f ~/.config/zsh/.spec_env ] && source ~/.config/zsh/.spec_env 
 
 #===============================================================================
 # Load secrets
@@ -51,3 +53,7 @@ source ~/.config/scripts/homebrew.sh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.config/posh/dracula.omp.json)"
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

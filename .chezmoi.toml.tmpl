@@ -1,0 +1,16 @@
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+
+[data]
+osid = {{ $osid | quote }}
+
+encryption = "age"
+[age]
+identity = "~/.ssh/id_rsa"
+symmetric = true
+
+[edit]
+command = "nvim"
+
