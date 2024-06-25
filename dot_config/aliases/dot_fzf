@@ -1,0 +1,1 @@
+alias fp='fzf --preview="bat --color=always {}"'

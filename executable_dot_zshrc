@@ -1,0 +1,53 @@
+#==============================================================================
+# Enable oh-my-zsh completions
+#==============================================================================
+autoload -U compinit; compinit
+
+#===============================================================================
+# Load environment variables
+#===============================================================================
+[ -f ~/.config/zsh/.env ] && source ~/.config/zsh/.env
+
+#===============================================================================
+# Load secrets
+#===============================================================================
+[ -f ~/.config/zsh/.secrets ] && source ~/.config/zsh/.secrets
+
+#===============================================================================
+# Load oh-my-zsh configuration and executable
+#===============================================================================
+[ -f ~/.config/zsh/.conf ] && source ~/.config/zsh/.conf
+source $ZSH/oh-my-zsh.sh
+
+#===============================================================================
+# Load package managers (nvm, pnpm, bun, etc)
+# ==============================================================================
+[ -f ~/.config/zsh/.package_managers ] && source ~/.config/zsh/.package_managers
+
+#===============================================================================
+# Load plugins (zoxide, fzf, etc)
+# ==============================================================================
+[ -f ~/.config/zsh/.plugins ] && source ~/.config/zsh/.plugins
+
+#===============================================================================
+# Load custom scripts
+# ==============================================================================
+source ~/.config/scripts/docker.sh
+source ~/.config/scripts/fzf.sh
+source ~/.config/scripts/homebrew.sh
+
+#===============================================================================
+# Load custom aliases
+#===============================================================================
+[ -f ~/.config/aliases/.fzf ] && source ~/.config/aliases/.fzf
+[ -f ~/.config/aliases/.terraform ] && source ~/.config/aliases/.terraform
+[ -f ~/.config/aliases/.lsd ] && source ~/.config/aliases/.lsd
+[ -f ~/.config/aliases/.zoxide ] && source ~/.config/aliases/.zoxide
+[ -f ~/.config/aliases/.kill ] && source ~/.config/aliases/.kill
+
+#==============================================================================
+# Load oh-my-posh
+#==============================================================================
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config ~/.config/posh/dracula.omp.json)"
+fi

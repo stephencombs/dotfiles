@@ -1,0 +1,9 @@
+alias ls='lsd --group-dirs=first --ignore-glob node_modules'
+alias lsc='lsd -1 --group-dirs first --ignore-glob node_modules'
+alias ll='lsd -l --group-dirs=first --ignore-glob node_modules'
+alias lr='lsd -R --group-dirs=first --ignore-glob node_modules'
+alias llr='lsd -lR --group-dirs=first --ignore-glob node_modules'
+alias lt='lsd --tree --group-dirs=first --ignore-glob node_modules --depth=2'
+alias llt='lsd -l --tree --group-dirs=first --ignore-glob node_modules'
+alias ltam='lsd -a --tree --group-dirs=first --ignore-glob node_modules'
+

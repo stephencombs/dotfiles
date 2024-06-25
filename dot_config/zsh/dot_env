@@ -1,0 +1,37 @@
+#===============================================================================
+# Environment Variables
+#===============================================================================
+export ZSH="$HOME/.oh-my-zsh" # Path to your oh-my-zsh installation.
+export HOMEBREW_NO_ENV_HINTS=1 # Disable Homebrew environment hints
+
+# AWS Environment Variables ====================================================
+export CDK_LOCAL_ENV=ste071122 # CDK local environment
+export ENVIRONMENT=$CDK_LOCAL_ENV
+
+# Package specific environment variables =======================================
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home # Java 17 home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-22.jdk/Contents/Home # Java 22 home
+export M2_HOME=/Users/ste071122/Library/maven/apache-maven-3.8.8
+export CHROMEDRIVER_HOME=/User/ste071122/dev-tools/chromedriver-mac-arm64/chromedriver
+export OPENSSL_DIR="/opt/homebrew/Cellar/openssl@3/3.2.1/"
+
+# Add executables to path ======================================================
+export PATH=$PATH:$HOME/.nvm/bin # Add nvm to path
+export PATH=$PATH:$M2_HOME/bin # Add maven to path
+export PATH=$PATH:$CHROMEDRIVER_HOME # Add chromedriver to path
+export PATH=$PATH:$HOME/.cargo/bin # Add cargo to path
+export PATH=$PATH:/opt/homebrew/opt/make/libexec/gnubin # Add GNU make to path
+export PATH=$PATH:/opt/podman/bin # Add podman to path
+
+# Newton Environment Variables =================================================
+export AR_USER=stephen # Artifactory username variable used for Maven configuration
+export AR_PASS=StevieJoe1998!! # Artifactory password variable used for Maven configuration
+export JFROG_USERNAME=$AR_USER # JFrog Artifactory username variable used for Newton configuration
+export JFROG_PASSWORD=$AR_PASS # JFrog Artifactory password variable used for Newton configuration
+
+# Preferred editor for local and remote sessions ===============================
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi

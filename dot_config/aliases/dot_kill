@@ -1,0 +1,6 @@
+alias kill_m_wdav="launchctl unload /Library/LaunchAgents/com.microsoft.wdav.tray.plist"
+alias kill_m_dlp="launchctl unload /Library/LaunchAgents/com.microsoft.dlp.agent.plist"
+alias kill_m_updater="launchctl unload /Library/LaunchAgents/com.microsoft.update.agent.plist"
+alias kill_onedrive_updater="launchctl unload /Library/LaunchAgents/com.microsoft.OneDriveStandaloneUpdater.plist"
+alias kill_m_all="kill_m_wdav && kill_m_dlp && kill_m_updater && kill_onedrive_updater"
+# alias kill_cisco="ls /Library/LaunchDaemons | grep "cisco" | while read line; do echo \"sudo launchctl unload /Library/LaunchDaemons/$line\" | date %s.%N ; done"

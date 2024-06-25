@@ -1,0 +1,12 @@
+#===============================================================================
+# oh-my-zsh configuration
+#===============================================================================
+ZSH_THEME="dracula" # Set the theme to use
+zstyle ':omz:update' mode reminder # Set update mode to reminder
+
+# Set plugins to load ==========================================================
+plugins=(
+  git 
+  docker-compose 
+  zsh-autosuggestions
+)
