@@ -1,7 +1,7 @@
 #!/bin/bash
 source "$HOME"/.local/share/chezmoi/dot_config/scripts/spinner.sh
 
-echo "Installing packages..."
+echo "Installing packages"
 start_spinner
 brew bundle --no-lock --file=/dev/stdin >"$HOME"/install-packages.log <<EOF
 brew "bat"
@@ -32,6 +32,7 @@ brew "mysql"
 brew "neovim"
 brew "nvm"
 brew "oh-my-posh"
+brew "oven-sh/bun/bun"
 brew "openssl"
 brew "packer"
 brew "perl"
@@ -45,6 +46,7 @@ brew "ripgrep"
 brew "rustup"
 brew "sqlite"
 brew "terraform"
+brew "unzip"
 brew "yq"
 brew "zellij"
 brew "zoxide"

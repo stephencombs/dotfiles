@@ -1,8 +1,9 @@
-#==============================================================================
-# Enable oh-my-zsh completions
-#==============================================================================
-autoload -U compinit; compinit
-
+{{ if eq .osid "darwin" -}}
+[ -f $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+{{ else if eq .osid "linux-debian" "linux-ubuntu" -}}
+skip_global_compinit=1
+[ -f /usr/bin/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source /usr/bin/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+{{ end }}
 #===============================================================================
 # Load environment variables
 #===============================================================================
@@ -16,15 +17,15 @@ autoload -U compinit; compinit
 [ -f ~/.config/zsh/.secrets ] && source ~/.config/zsh/.secrets
 
 #===============================================================================
-# Load oh-my-zsh configuration and executable
-#===============================================================================
-[ -f ~/.config/zsh/.conf ] && source ~/.config/zsh/.conf
-source $ZSH/oh-my-zsh.sh
-
-#===============================================================================
 # Load package managers (nvm, pnpm, bun, etc)
 # ==============================================================================
 [ -f ~/.config/zsh/.package_managers ] && source ~/.config/zsh/.package_managers
+
+#===============================================================================
+# Load oh-my-zsh configuration and executable
+#===============================================================================
+[ -f ~/.config/zsh/.conf ] && source ~/.config/zsh/.conf
+[ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 
 #===============================================================================
 # Load plugins (zoxide, fzf, etc)
@@ -34,9 +35,9 @@ source $ZSH/oh-my-zsh.sh
 #===============================================================================
 # Load custom scripts
 # ==============================================================================
-source ~/.config/scripts/docker.sh
-source ~/.config/scripts/fzf.sh
-source ~/.config/scripts/homebrew.sh
+[ -f ~/.config/scripts/docker.sh ] && source ~/.config/scripts/docker.sh
+[ -f ~/.config/scripts/fzf.sh ] && source ~/.config/scripts/fzf.sh
+[ -f ~/.config/scripts/homebrew.sh ] && source ~/.config/scripts/homebrew.sh
 
 #===============================================================================
 # Load custom aliases

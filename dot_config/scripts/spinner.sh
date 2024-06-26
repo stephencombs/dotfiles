@@ -6,7 +6,7 @@ start_spinner() {
         # start the spinner
         set +m
         local message=$1
-        /bin/echo -en "$message...   "
+	      /bin/echo -en "$message...         "
         # { while : ; do for X in '-' '\' '|' '/' ; do /bin/echo -en "\b$X" ; sleep 0.1 ; done ; done & } 2>/dev/null
         # { while : ; do for X in '┤' '┘' '┴' '└' '├' '┌' '┬' '┐' ; do /bin/echo -en "\b$X" ; sleep 0.1 ; done ; done & } 2>/dev/null
         { while : ; do for X in '  •     ' '   •    ' '    •   ' '     •  ' '      • ' '     •  ' '    •   ' '   •    ' '  •     ' ' •      ' ; do /bin/echo -en "\b\b\b\b\b\b\b\b$X" ; sleep 0.1 ; done ; done & } 2>/dev/null

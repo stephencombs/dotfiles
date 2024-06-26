@@ -2,6 +2,10 @@
 
 Welcome to my dotfiles! The entirety of my development environment. Follow the steps below to try it out on your machine.
 
+## OS Support
+- macOS
+- Linux (Debian-based)
+
 ## What's included?
 
 - [Alacritty](https://alacritty.org/index.html#Installation) (Terminal emulator)
@@ -19,16 +23,12 @@ Welcome to my dotfiles! The entirety of my development environment. Follow the s
 
 ## Installation
 
-> [!IMPORTANT] 
-> If you're on a Debian-based machine run the following commands to install Nix for package management
-> ```bash
-> sudo apt update -y && \
-> sudo apt upgrade -y && \
-> sudo apt install xz-utils -y && \
-> sh <(curl -L https://nixos.org/nix/install) --no-daemon
-> ```
-
 1. Install [age](https://github.com/FiloSottile/age?tab=readme-ov-file#installation) to decrypt secure files 
+```bash
+brew install age # macOS
+# or
+sudo apt install -y age # Debian
+```
 
 2. Run this command to download and apply the environment using [chezmoi](https://www.chezmoi.io/)
 ```bash

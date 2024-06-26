@@ -48,7 +48,7 @@
 						"fetch_version": true
 					},
 					"style": "plain",
-					"template": "<#cc7eda>\u007C </><#7eb8da>\ue781 </>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+					"template": "<#cc7eda> \u007C </><#7eb8da>\ue781 </>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
 					"type": "node"
 				},
 				{
