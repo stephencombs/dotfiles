@@ -1,9 +1,3 @@
-{{ if eq .osid "darwin" -}}
-[ -f $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-{{ else if eq .osid "linux-debian" "linux-ubuntu" -}}
-skip_global_compinit=1
-[ -f /usr/bin/zsh-autocomplete/zsh-autocomplete.plugin.zsh ] && source /usr/bin/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-{{ end }}
 #===============================================================================
 # Load environment variables
 #===============================================================================
