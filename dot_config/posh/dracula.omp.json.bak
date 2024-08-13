@@ -1,15 +1,21 @@
 {
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"version": 2,
+	"final_space": true,
 	"blocks": [
 		{
 			"type": "prompt",
 			"alignment": "left",
+			"newline": true,
 			"segments": [
 				{
 					"type": "path",
 					"style": "plain",
 					"foreground": "#bd93f9",
-					"template": " {{ .Path }} "
+					"template": " {{ .Path }} ",
+					"properties": {
+						"style": "full"
+					}
 				},
 				{
 					"type": "git",
@@ -27,6 +33,7 @@
 			]
 		},
 		{
+			"type": "rprompt",
 			"alignment": "right",
 			"segments": [
 				{
@@ -41,7 +48,7 @@
 						"fetch_version": true
 					},
 					"style": "plain",
-					"template": "<#cc7eda>\u007C </><#7eb8da>\ue781 </>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+					"template": "<#cc7eda> \u007C </><#7eb8da>\ue781 </>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
 					"type": "node"
 				},
 				{
@@ -68,7 +75,7 @@
 						"time_format": "15:04:05"
 					},
 					"style": "plain",
-					"template": "<#cc7eda>\u007C </>⏰{{ .CurrentDate | date .Format }} ",
+					"template": "<#cc7eda>\u007C </>⏰ {{ .CurrentDate | date .Format }} ",
 					"type": "time"
 				},
 				{
@@ -81,13 +88,12 @@
 					"template": "<#cc7eda>\u007C </>{{ .FormattedMs }} ",
 					"type": "executiontime"
 				}
-			],
-			"type": "prompt"
+			]
 		}
 	],
 	"transient_prompt": {
 		"background": "transparent",
-		"foreground": "#ffffff",
-		"template": "{{ .Shell }}> "
+		"foreground": "#81ff91",
+		"template": "~> "
 	}
 }
