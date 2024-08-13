@@ -4,10 +4,4 @@
 export ZSH="$HOME/.oh-my-zsh" # Path to your oh-my-zsh installation.
 export PATH="$HOME/.local/bin:$PATH" # Path to your bin folder
 export HOMEBREW_NO_ENV_HINTS=1 # Disable Homebrew environment hints
-
-# Preferred editor for local and remote sessions ===============================
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
+export EDITOR='nvim'

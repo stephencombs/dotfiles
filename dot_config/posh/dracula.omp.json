@@ -75,7 +75,7 @@
 						"time_format": "15:04:05"
 					},
 					"style": "plain",
-					"template": "<#cc7eda>\u007C </>⏰{{ .CurrentDate | date .Format }} ",
+					"template": "<#cc7eda>\u007C </>⏰ {{ .CurrentDate | date .Format }} ",
 					"type": "time"
 				},
 				{

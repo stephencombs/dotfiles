@@ -7,10 +7,38 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Base16 Dracula",
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
-  "ui_font_size": 13,
-  "buffer_font_size": 13,
+  "theme": "Dracula",
+
+  // Buffer font settings
+  "buffer_font_size": 14,
+  "buffer_font_family": "MonoLisa",
+  "buffer_font_features": {
+    "liga": true,
+    "calt": true,
+    "zero": true,
+    "ss04": true,
+    "ss06": true,
+    "ss11": true,
+    "ss13": true,
+    "ss15": true,
+    "ss16": true
+  },
+
+  // UI font settings
+  "ui_font_size": 14,
+  "ui_font_family": "MonoLisa",
+  "ui_font_features": {
+    "liga": true,
+    "calt": true,
+    "zero": true,
+    "ss04": true,
+    "ss06": true,
+    "ss11": true,
+    "ss13": true,
+    "ss15": true,
+    "ss16": true
+  },
+
   "vim_mode": true,
   "relative_line_numbers": true,
 
