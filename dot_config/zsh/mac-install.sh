@@ -55,6 +55,11 @@ brew "zsh-autocomplete"
 brew "zsh-completions"
 brew "zstd"
 cask "alacritty"
+cask "orbstack"
+cask "jetbrains-toolbox"
+cask "ghostty"
+cask "cursor"
+cask "visual-studio-code"
 EOF
 stop_spinner
 
