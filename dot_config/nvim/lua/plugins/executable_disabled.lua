@@ -1,3 +1,3 @@
 return {
-  { "echasnovski/mini.starter", enabled = false },
+    -- { "echasnovski/mini.starter", enabled = false },
 }

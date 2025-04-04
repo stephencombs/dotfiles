@@ -3,11 +3,11 @@
 -- Add any additional keymaps here
 
 local function map(mode, lhs, rhs, opts)
-  vim.keymap.set(mode, lhs, rhs, opts)
+    vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 local function deleteMap(modes, lhs, opts)
-  vim.keymap.del(modes, lhs, opts)
+    vim.keymap.del(modes, lhs, opts)
 end
 
 -- Center screen with <C-d>/<C-u>

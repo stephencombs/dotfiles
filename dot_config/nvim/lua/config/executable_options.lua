@@ -6,8 +6,8 @@
 vim.g.autoformat = false
 
 -- Disable comment continuation formatting
-vim.opt.formatoptions:remove { "c", "r", "o" }
+vim.opt.formatoptions:remove({ "c", "r", "o" })
 
-vim.g.backupcopy = 'yes'
+vim.g.backupcopy = "yes"
 
 vim.opt.relativenumber = true
