@@ -3,7 +3,7 @@ source "$HOME"/.local/share/chezmoi/dot_config/scripts/spinner.sh
 
 echo "Installing packages"
 start_spinner
-brew bundle --no-lock --file=/dev/stdin >"$HOME"/install-packages.log <<EOF
+brew bundle --file=/dev/stdin >"$HOME"/install-packages.log <<EOF
 brew "bat"
 brew "bottom"
 brew "brotli"
