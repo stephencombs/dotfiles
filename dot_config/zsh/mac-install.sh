@@ -2,7 +2,6 @@
 source "$HOME"/.local/share/chezmoi/dot_config/scripts/spinner.sh
 
 echo "Installing packages"
-start_spinner
 brew bundle --file=/dev/stdin >"$HOME"/install-packages.log <<EOF
 brew "bat"
 brew "bottom"
@@ -61,7 +60,6 @@ cask "ghostty"
 cask "cursor"
 cask "visual-studio-code"
 EOF
-stop_spinner
 
 echo "Environment setup complete. (logs in $HOME/install-packages.log)"
 echo "Please run 'source ~/.zshrc' to apply changes."
