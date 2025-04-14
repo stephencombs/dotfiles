@@ -1,0 +1,69 @@
+
+
+set visualbell
+set noerrorbells
+set surround
+set multiple-cursors
+set scrolloff=5
+set idearefactormode=keep
+set relativenumber number
+set ideajoin
+set incsearch
+set ignorecase
+set relativenumber number
+nmap Q gq
+
+
+set NERDTree
+
+" set <leader> to <space>
+let mapleader = " "
+
+nmap j jzz
+nmap k kzz
+
+vmap j jzz
+vmap k kzz
+
+nmap <leader>rf :action Refactorings.QuickListPopupAction<CR>
+vmap <leader>rf :action Refactorings.QuickListPopupAction<CR>
+nmap <leader>rn :action RenameElement<CR>
+nmap gh :action ShowErrorDescription<CR>
+nmap <leader>rn :action RenameElement<CR>
+nmap gi :action GotoImplementation<CR>
+nmap gt :action GotoTypeDeclaration<CR>
+nmap gd :action GotoDeclaration<CR>
+nmap ge :action GotoNextError<CR>
+nmap gE :action GotoPreviousError<CR>
+nmap gr :action FindUsages<CR>
+nmap <C-n>n :NERDTreeFocus<CR>
+nmap <C-n>f :NERDTreeFind<CR>
+nmap [[ :action MethodUp<CR>
+nmap ]] :action MethodDown<CR>
+nmap <C-o> :action Back<CR>
+nmap <C-i> :action Forward<CR>
+nmap <leader>cf :action ReformatCode<CR>
+nmap K :action ShowHoverInfo<CR>
+nmap <c-z> :action ToggleDistractionFreeMode<CR>
+nmap gcc :action CommentByLineComment<CR>
+vmap gc :action CommentByLineComment<CR>
+
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+
+xnoremap <leader>p \"_dP
+nmap <leader>d \"_d
+vmap <leader>d \"_d
+
+
+
+nmap <leader>ut :action ActivateUnitTestsToolWindow<CR>
+
+if &ide =~? 'intellij'
+    nmap <leader>tt :action RunClass<CR>
+    nmap <leader>td :action DebugClass<CR>
+    nmap <leader>tr :action Rerun<CR>
+endif
+
+
+nmap <leader>bp :action ToggleLineBreakpoint<CR>
